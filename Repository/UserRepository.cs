@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using MongoDB.Driver;
 using MongoDB.Driver.Core;
+using MongoDB.Driver.Builders;
 using MongoDB.Bson;
 
 namespace CDO.Models
@@ -21,5 +22,10 @@ namespace CDO.Models
             _collection = _database.GetCollection<Bug>("users");
         }
         
+        public void GetUser(string email)
+        {
+            var query  = _collection.Find(Builders<BsonDocument>.Filter.Eq("Email", email).ToJson());
+            Console.WriteLine(query);
+        }
     }
 }
