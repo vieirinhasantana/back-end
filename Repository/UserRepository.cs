@@ -13,19 +13,20 @@ namespace CDO.Models
     {
         private IMongoClient          _client;
         private IMongoDatabase        _database;
-        private IMongoCollection<Bug> _collection;
+        private IMongoCollection<User> _collection;
 
         public UserRepository()
         {
             _client     = new MongoClient("mongodb://127.0.0.1:27017");
             _database   = _client.GetDatabase("cdo");
-            _collection = _database.GetCollection<Bug>("users");
+            _collection = _database.GetCollection<User>("users");
         }
         
-        public void GetUser(string email)
+        public List<User> GetUser(string email)
         {
-            var query  = _collection.Find(Builders<BsonDocument>.Filter.Eq("Email", email).ToJson());
-            Console.WriteLine(query);
+            var filter = Builders<User>.Filter.Eq("Email", email);
+            var query = _collection.Find(filter).ToList();
+            return query;
         }
     }
 }

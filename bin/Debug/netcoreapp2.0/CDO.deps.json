@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "dcf542d19c7403c4c78bd9dd60c2f3bc2372cb96"
+    "signature": "b9723e9fdc6bd1b86d8911dce9db236281df4eff"
   },
   "compilationOptions": {
     "defines": [
@@ -23,7 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "CDO/1.0.0": {
         "dependencies": {
-          "BCrypt-Official": "0.1.109",
+          "BCrypt.Net-Core": "1.4.0",
           "JWT": "3.1.1",
           "Microsoft.AspNetCore.All": "2.0.3",
           "Microsoft.NETCore.App": "2.0.0",
@@ -40,12 +40,16 @@
           "CDO.dll": {}
         }
       },
-      "BCrypt-Official/0.1.109": {
+      "BCrypt.Net-Core/1.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "System.Runtime.Extensions": "4.3.0"
+        },
         "runtime": {
-          "lib/BCrypt.Net.dll": {}
+          "lib/netstandard1.3/BCrypt.Net-Core.dll": {}
         },
         "compile": {
-          "lib/BCrypt.Net.dll": {}
+          "lib/netstandard1.3/BCrypt.Net-Core.dll": {}
         }
       },
       "DnsClient/1.0.7": {
@@ -4240,12 +4244,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BCrypt-Official/0.1.109": {
+    "BCrypt.Net-Core/1.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4iTKqcCn1Eb3fsbbjhv9d9bwswCvEwXavwwo+XTrYAGCfP1YfVZGmRybKWLf2A6BDh+9bZn4zK6AnQaNcqtraA==",
-      "path": "bcrypt-official/0.1.109",
-      "hashPath": "bcrypt-official.0.1.109.nupkg.sha512"
+      "sha512": "sha512-61fIfobQh+o1vsoLTY6abM2UnyFLGAXJSqLYAwlNMfC3445kDD57AqLrJIAOFcHsgn+T3i8tbCP0ugK5btA6Uw==",
+      "path": "bcrypt.net-core/1.4.0",
+      "hashPath": "bcrypt.net-core.1.4.0.nupkg.sha512"
     },
     "DnsClient/1.0.7": {
       "type": "package",

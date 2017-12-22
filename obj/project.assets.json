@@ -2,13 +2,17 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "BCrypt-Official/0.1.109": {
+      "BCrypt.Net-Core/1.4.0": {
         "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Runtime.Extensions": "4.1.0"
+        },
         "compile": {
-          "lib/BCrypt.Net.dll": {}
+          "lib/netstandard1.3/BCrypt.Net-Core.dll": {}
         },
         "runtime": {
-          "lib/BCrypt.Net.dll": {}
+          "lib/netstandard1.3/BCrypt.Net-Core.dll": {}
         }
       },
       "DnsClient/1.0.7": {
@@ -5032,17 +5036,18 @@
     }
   },
   "libraries": {
-    "BCrypt-Official/0.1.109": {
-      "sha512": "4iTKqcCn1Eb3fsbbjhv9d9bwswCvEwXavwwo+XTrYAGCfP1YfVZGmRybKWLf2A6BDh+9bZn4zK6AnQaNcqtraA==",
+    "BCrypt.Net-Core/1.4.0": {
+      "sha512": "61fIfobQh+o1vsoLTY6abM2UnyFLGAXJSqLYAwlNMfC3445kDD57AqLrJIAOFcHsgn+T3i8tbCP0ugK5btA6Uw==",
       "type": "package",
-      "path": "bcrypt-official/0.1.109",
+      "path": "bcrypt.net-core/1.4.0",
       "files": [
-        "bcrypt-official.0.1.109.nupkg.sha512",
-        "bcrypt-official.nuspec",
-        "content/LICENSE.txt",
-        "lib/BCrypt.Net.XML",
-        "lib/BCrypt.Net.dll",
-        "lib/BCrypt.Net.pdb"
+        "bcrypt.net-core.1.4.0.nupkg.sha512",
+        "bcrypt.net-core.nuspec",
+        "lib/net40/BCrypt.Net-Core.dll",
+        "lib/net45/BCrypt.Net-Core.dll",
+        "lib/net451/BCrypt.Net-Core.dll",
+        "lib/net452/BCrypt.Net-Core.dll",
+        "lib/netstandard1.3/BCrypt.Net-Core.dll"
       ]
     },
     "DnsClient/1.0.7": {
@@ -13100,7 +13105,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "BCrypt-Official >= 0.1.109",
+      "BCrypt.Net-Core >= 1.4.0",
       "JWT >= 3.1.1",
       "Microsoft.AspNetCore.All >= 2.0.3",
       "Microsoft.NETCore.App >= 2.0.0",
@@ -13152,9 +13157,9 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "BCrypt-Official": {
+          "BCrypt.Net-Core": {
             "target": "Package",
-            "version": "[0.1.109, )"
+            "version": "[1.4.0, )"
           },
           "JWT": {
             "target": "Package",
@@ -13197,17 +13202,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'BCrypt-Official 0.1.109' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "BCrypt-Official",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }
