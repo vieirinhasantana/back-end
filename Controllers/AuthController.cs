@@ -22,19 +22,17 @@ namespace CDO.Controllers
     {
         public UserRepository _userRepository = new UserRepository();
         public Token          _token          = new Token();
+        public Error          _error          = new Error();
 
         [HttpPost]
-        public void Auth()
+        public JsonResult Auth()
         {
-            /*string authorization = Request.Headers["Authorization"];
+            string authorization = Request.Headers["Authorization"];
             string authorizationDecode = this.DecryptAuthorizationBase64(authorization);
             string[] credentials = authorizationDecode.Split(':');
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-            return this.ValidateExistenceOfUserCredentials(credentials[0], credentials[1]);
-            //return Response.StatusCode = 400;*/
-            HttpResponse Response = System.Web.HttpContext.Current.Response;
-
+            var result = this.ValidateExistenceOfUserCredentials(credentials[0], credentials[1]);
+            var decondeJson = JsonConvert.DeserializeObject(result);
+            return Json(decondeJson);
         }
 
         private string DecryptAuthorizationBase64(string authorization)
@@ -45,14 +43,15 @@ namespace CDO.Controllers
                 string decodeAuthorization = Encoding.UTF8.GetString(data);
                 return decodeAuthorization;
             } else {
-                return "Error";
+                _error.StatusError = 500;
+                _error.Description = "Internal Error!";
+                return JsonConvert.SerializeObject(_error);
             }
         }
 
         private string ValidateExistenceOfUserCredentials(string email, string password)
         {
             var users = _userRepository.GetUser(email);
-            string messageError = "Invalid credentials";
             if(users.Count != 0 ) {
                 string emailData    = users[0].Email;
                 string passwordData = users[0].Password;
@@ -62,7 +61,9 @@ namespace CDO.Controllers
                     return JsonConvert.SerializeObject(_token);
                 }
             }
-            return messageError;
+            _error.StatusError = 500;
+            _error.Description = "Internal Error!";
+            return JsonConvert.SerializeObject(_error);
         }
 
         private string GenerateNewTokenForUser()
