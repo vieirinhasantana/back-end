@@ -57,7 +57,7 @@ namespace CDO.Controllers
                 string passwordData = users[0].Password;
                 if (BCrypt.Net.BCrypt.Verify(password, passwordData)) {
                     _token.Email = email;
-                    _token.TokenAccess = this.GenerateNewTokenForUser();
+                    _token.TokenAccess = this.GenerateNewTokenForUser(email);
                     return JsonConvert.SerializeObject(_token);
                 }
             }
@@ -66,13 +66,12 @@ namespace CDO.Controllers
             return JsonConvert.SerializeObject(_error);
         }
 
-        private string GenerateNewTokenForUser()
+        private string GenerateNewTokenForUser(string email)
         {
             const string secret = "85#m8G[<C*M?cwNyn8Q'$Ie/@`=qF5tOh}-mBdRF*~Y9kJ6@BITbK>S}8 LO,!/Q";
             var payload = new Dictionary<string, object>
             {
-                { "claim1", 0 },
-                { "claim2", "claim2-value" }
+                { "email", email }
             };
             JWT.IJwtAlgorithm      algorithm = new HMACSHA256Algorithm();
             JWT.IJsonSerializer   serializer = new JsonNetSerializer();

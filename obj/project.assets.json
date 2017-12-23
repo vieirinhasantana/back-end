@@ -13187,30 +13187,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\daniel.vieira\\.nuget\\packages\\": {},
+    "C:\\Users\\Wan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\daniel.vieira\\Desktop\\CDO\\CDO.csproj",
+      "projectUniqueName": "c:\\Users\\Wan\\Desktop\\teste\\cdo\\CDO.csproj",
       "projectName": "CDO",
-      "projectPath": "c:\\Users\\daniel.vieira\\Desktop\\CDO\\CDO.csproj",
-      "packagesPath": "C:\\Users\\daniel.vieira\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\daniel.vieira\\Desktop\\CDO\\obj\\",
+      "projectPath": "c:\\Users\\Wan\\Desktop\\teste\\cdo\\CDO.csproj",
+      "packagesPath": "C:\\Users\\Wan\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Wan\\Desktop\\teste\\cdo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\daniel.vieira\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Wan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
