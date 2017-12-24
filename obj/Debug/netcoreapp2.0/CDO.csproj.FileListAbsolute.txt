@@ -18,3 +18,13 @@ c:\Users\Wan\Desktop\teste\cdo\obj\Debug\netcoreapp2.0\CDO.AssemblyInfoInputs.ca
 c:\Users\Wan\Desktop\teste\cdo\obj\Debug\netcoreapp2.0\CDO.AssemblyInfo.cs
 c:\Users\Wan\Desktop\teste\cdo\obj\Debug\netcoreapp2.0\CDO.dll
 c:\Users\Wan\Desktop\teste\cdo\obj\Debug\netcoreapp2.0\CDO.pdb
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\obj\Debug\netcoreapp2.0\CDO.csproj.CoreCompileInputs.cache
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\obj\Debug\netcoreapp2.0\CDO.AssemblyInfoInputs.cache
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\obj\Debug\netcoreapp2.0\CDO.AssemblyInfo.cs
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\obj\Debug\netcoreapp2.0\CDO.dll
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\obj\Debug\netcoreapp2.0\CDO.pdb
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\bin\Debug\netcoreapp2.0\CDO.deps.json
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\bin\Debug\netcoreapp2.0\CDO.runtimeconfig.json
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\bin\Debug\netcoreapp2.0\CDO.runtimeconfig.dev.json
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\bin\Debug\netcoreapp2.0\CDO.dll
+c:\Users\Daniel Vieira\Desktop\cdo\cdo\bin\Debug\netcoreapp2.0\CDO.pdb

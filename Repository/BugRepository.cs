@@ -26,5 +26,19 @@ namespace CDO.Models
             return _collection.Find(new BsonDocument()).ToList();
             //return "dsasdddsads";
         }
+        public string InsertOne()
+        {
+            var document = new Bug
+            {
+                Title   = "sadsadsadsa",
+                Severity = "Very High",
+                Product = "dasdsad",
+                Description = "dsdsasdasdadsa",
+                Email = "vieirinhasantana@gmail.com",
+                Status = "Aberto"
+            };
+            _collection.InsertOne(document);
+            return "successfuly";
+        }
     }
 }

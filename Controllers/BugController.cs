@@ -14,9 +14,14 @@ namespace CDO.Controllers
         public BugRepository _bugRepository = new BugRepository();
 
         [HttpGet]
-        public List<Bug> GetAll()//IEnumerable<Bug> GetList()
+        public List<Bug> GetAll()
         {
             return _bugRepository.GetAll();
+        }
+
+        [HttpPost]
+        public string Post(){
+            return _bugRepository.InsertOne();
         }
     }
 }
