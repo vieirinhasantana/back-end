@@ -1,3 +1,4 @@
+using System;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -17,11 +18,14 @@ namespace CDO.Models
         [BsonElement("Description")]
         public string Description { get; set; }
 
-        [BsonElement("Product")]
-        public string Product { get; set; }
+      /*  [BsonElement("Product")]
+        public string Product { get; set; }*/
 
         [BsonElement("Email")]
         public string Email { get; set; }
+
+        [BsonElement("Timestamp")]
+        public DateTime Timestamp { get; set; }        
 
         [BsonElement("Image")]
         public string Image { get; set; }

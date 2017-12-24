@@ -24,18 +24,18 @@ namespace CDO.Models
         public List<Bug> GetAll()
         {
             return _collection.Find(new BsonDocument()).ToList();
-            //return "dsasdddsads";
         }
-        public string InsertOne()
+        public string InsertOne(string title, string severity, string description, string email, string status, string image)
         {
             var document = new Bug
             {
-                Title   = "sadsadsadsa",
-                Severity = "Very High",
-                Product = "dasdsad",
-                Description = "dsdsasdasdadsa",
-                Email = "vieirinhasantana@gmail.com",
-                Status = "Aberto"
+                Title = title,
+                Severity = severity,
+                Description = description,
+                Email = email,
+                Timestamp = DateTime.Now,
+                Status = status,
+                Image = image
             };
             _collection.InsertOne(document);
             return "successfuly";
