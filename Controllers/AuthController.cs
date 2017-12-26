@@ -23,7 +23,7 @@ namespace CDO.Controllers
         public UserRepository _userRepository = new UserRepository();
         public Token          _token          = new Token();
         public Error          _error          = new Error();
-
+        private const string secret = "85#m8G[<C*M?cwNyn8Q'$Ie/@`=qF5tOh}-mBdRF*~Y9kJ6@BITbK>S}8 LO,!/Q";
         [HttpPost]
         public JsonResult Auth()
         {
@@ -44,7 +44,7 @@ namespace CDO.Controllers
                 return decodeAuthorization;
             } else {
                 _error.StatusError = 500;
-                _error.Description = "Internal Error!";
+                _error.Description = "Internal Error11!";
                 return JsonConvert.SerializeObject(_error);
             }
         }
@@ -62,13 +62,12 @@ namespace CDO.Controllers
                 }
             }
             _error.StatusError = 500;
-            _error.Description = "Internal Error!";
+            _error.Description = "Internal Error22!";
             return JsonConvert.SerializeObject(_error);
         }
 
         private string GenerateNewTokenForUser(string email)
         {
-            const string secret = "85#m8G[<C*M?cwNyn8Q'$Ie/@`=qF5tOh}-mBdRF*~Y9kJ6@BITbK>S}8 LO,!/Q";
             var payload = new Dictionary<string, object>
             {
                 { "email", email }
@@ -80,6 +79,30 @@ namespace CDO.Controllers
 
             var token = encoder.Encode(payload, secret);
             return token;
+        }
+        [HttpGet]
+        public string verifyUserToken ()
+        {
+            string token = Request.Headers["token"];
+            try
+            {
+                JWT.IJsonSerializer serializer = new JsonNetSerializer();
+                JWT.IDateTimeProvider provider = new JWT.UtcDateTimeProvider();
+                JWT.IJwtValidator validator = new JWT.JwtValidator(serializer, provider);
+                JWT.IBase64UrlEncoder urlEncoder = new JWT.JwtBase64UrlEncoder();
+                JWT.IJwtDecoder decoder = new JWT.JwtDecoder(serializer, validator, urlEncoder);
+                
+                var json = decoder.Decode(token, secret, verify: true);
+                return "ok";
+            }
+            catch (JWT.TokenExpiredException)
+            {
+                return "Token has expired";
+            }
+            catch (JWT.SignatureVerificationException)
+            {
+                return "Token has invalid signature";
+            }
         }
     }
 }

@@ -7,7 +7,10 @@ namespace CDO.Models
     public class Bug
     {
         [BsonId]
-        public ObjectId Id { get; set; }
+        public ObjectId Id{ get; set; }
+
+        [BsonElement("IdBug")]
+        public string IdBug { get; set; }
 
         [BsonElement("Title")]
         public string Title { get; set; }
@@ -17,9 +20,6 @@ namespace CDO.Models
 
         [BsonElement("Description")]
         public string Description { get; set; }
-
-      /*  [BsonElement("Product")]
-        public string Product { get; set; }*/
 
         [BsonElement("Email")]
         public string Email { get; set; }

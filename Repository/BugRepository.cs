@@ -25,10 +25,18 @@ namespace CDO.Models
         {
             return _collection.Find(new BsonDocument()).ToList();
         }
+
+        public List<Bug> GetOne(string objectId)
+        {
+            return _collection.Find(Builders<Bug>.Filter.Eq("IdBug", objectId)).ToList();
+        }
         public string InsertOne(string title, string severity, string description, string email, string status, string image)
         {
+
+            //Guid g;
             var document = new Bug
             {
+                IdBug = Guid.NewGuid().ToString(),
                 Title = title,
                 Severity = severity,
                 Description = description,
@@ -38,7 +46,13 @@ namespace CDO.Models
                 Image = image
             };
             _collection.InsertOne(document);
-            return "successfuly";
+            return "successful";
+        }
+
+        public string Update(string objectId)
+        {
+            _collection.FindOneAndUpdate(Builders<Bug>.Filter.Eq("IdBug", objectId), Builders<Bug>.Update.Set("Status", "fechado"));
+            return "successful";
         }
     }
 }
